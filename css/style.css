@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Nunito !important;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: radial-gradient(#fff, #fff);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+}
+
+p {
+    color: #555;
+}
+
+.container {
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-2 {
+    flex-basis: 100%;
+    min-width: 300px;
+    margin: 0 80px;
+}
+
+
+/*.col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+}*/
+
+.col-2 h1 {
+    font-size: 200%;
+    line-height: 40px;
+    margin: 25px 0;
+    color: #fff;
+}
+
+.btn {
+    background-color: #9645dd;
+    color: #ffffff;
+    border: 2px solid #9645dd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 35px;
+    display: inline-block;
+    transition: .5s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #7424ba;
+    color: #ffffff;
+    border: 2px solid #7424ba;
+}
+
+.header {
+    background-image: url(/img/autoparte-back01-08.svg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 54vh;
+}
+
+.header .row {
+    margin-top: 30px;
+}
