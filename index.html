@@ -7,8 +7,9 @@
     <title>Autoparte.cl | Cotiza con nosotros tus respuestos</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="img/autoparte-fv-09.svg">
     <script src="https://kit.fontawesome.com/4bb686cdec.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </head>
 
@@ -19,7 +20,7 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="img/logob.png" width="50xp">
+                    <img src="img/autoparte-lg-08.svg" width="150xp">
                 </div>
                 <nav>
                     <ul>
@@ -47,12 +48,20 @@
     <div class="categories">
         <div class="row">
             <div class="col-3">
-
+                <h3>catalogo</h3>
             </div>
         </div>
     </div>
 
 
+    <div class="footer"></div>
+
 </body>
+
+<script>
+    $(document).ready(function() {
+        $('.footer').load('./footer.html');
+    });
+</script>
 
 </html>
