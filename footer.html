@@ -1,7 +1,7 @@
 <style>
     .foo {
         height: 180px;
-        position: fixed;
+        /* position: fixed; */
         width: 100%;
         background-color: #000;
         color: #fff;
@@ -10,17 +10,49 @@
         text-align: center;
         display: flex;
         align-items: center;
+        list-style: none;
+        text-decoration: none;
     }
     
     .col-f {
-        display: flex;
         padding: 30px;
         width: 100%;
+        flex: 1;
+        text-align: left;
     }
     
     col-f ul {
-        display: inline-block;
-        list-style-type: none;
+        text-decoration: none;
+    }
+    
+    col-f ul li {
+        text-decoration: none;
+    }
+    
+    col-f ul li a {
+        text-decoration: none;
+        color: #555;
+        list-style: none;
+    }
+    
+    .fa-whatsapp {
+        color: #fff;
+        background: linear-gradient(#25d366, #25d366) 14% 84%/16% 16% no-repeat, radial-gradient(#25d366 60%, transparent 0);
+    }
+    
+    .fa-instagram-square {
+        color: transparent;
+        background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+    
+    .fa-facebook-square {
+        color: blue;
+        background-color: white;
     }
 </style>
 
@@ -29,17 +61,25 @@
         <img src="img/autoparte-logo-foot-10.svg" width="200px">
     </div>
     <div class="col-f">
-        <h3>Ayuda y soporte</h4>
-            <ul>
-                <li><a href="">¿Como cotizar?</a></li>
-                <li><a href="">¿Como comprar?</a></li>
-                <li><a href="">FAQs</a></li>
-            </ul>
+        <h3>Ayuda y soporte</h3>
+        <li><a href="">¿Como cotizar?</a></li>
+        <li><a href="">¿Como comprar?</a></li>
+        <li><a href="">FAQs</a></li>
     </div>
     <div class="col-f">
-        <h3>Mi cuenta</h4>
+        <h3>Mi cuenta</h3>
+
+        <li><a href="">Registrate</a></li>
+        <li><a href="">Iniciar Sesión</a></li>
+        <li><a href="">Olvide Contraseña</a></li>
+
     </div>
     <div class="col-f">
-        <h3>contactános</h4>
+        <h3>Contactános</h3>
+        <!--<i class="fab fa-facebook-square fa-2x"></i>-->
+        <i class="fab fa-instagram-square fa-2x"></i>
+        <i class="fa fa-whatsapp fa-2x"></i>
+        <a href="http://www.facebook.com/AQUI_TU_PAGINA" target="_blank"><img alt="Siguenos en Facebook" src="https://lh6.googleusercontent.com/-CYt37hfDnQ8/T3nNydojf_I/AAAAAAAAAr0/P5OtlZxV4rk/s32/facebook32.png" width=32 height=32 /></a>
+
     </div>
 </div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoparte.cl | Cotiza con nosotros tus respuestos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="shortcut icon" href="img/autoparte-fv-09.svg">
+    <script src="https://kit.fontawesome.com/4bb686cdec.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="header" style="background-image:url(/img/autoparte-back02-08.svg)">
+
+        <div class="nav"></div>
+
+        <div class="row">
+            <div class="col-2">
+                <h1>Cotizador online</h1>
+            </div>
+        </div>
+    </div>
+    <div class="vehiculo">
+        <form action="">
+            <h2>Indícanos los datos de tu automóvil</h2>
+            <div class="row">
+                <div class="col-2">
+                    <label for="sel1">Marca *</label><br>
+                    <input name="Marca" type="text" name="Marca de vehiculo" title="Marca del vehiculo" placeholder="Marca(Peugeot, nissan)" />
+                </div>
+                <div class="col-2">
+                    <label for="sel1">Año *</label><br>
+                    <input name="Marca" type="text" placeholder="Año" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label for="sel1">Modelo *</label><br>
+                    <input name="Marca" type="text" value="Por favor, Marca de vehiculo" />
+                </div>
+                <div class="col-2">
+                    <label for="sel1">Vin *</label><br>
+                    <input name="Marca" type="text" value="Por favor, Marca de vehiculo" />
+                </div>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+
+    <div class="footer"></div>
+
+</body>
+
+<script>
+    $(document).ready(function() {
+        $('.nav').load('./nav.html');
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('.footer').load('./footer.html');
+    });
+</script>
+
+</html>

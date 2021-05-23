@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
+
+
+
+    <title>Autoparte.cl | Cotiza con nosotros tus respuestos</title>
+    <script src="js/filtro.js"></script>
+</head>
+
+<body>
+    <style>
+        .multiselect {
+            width: 200px;
+        }
+        
+        .selectBox {
+            position: relative;
+        }
+        
+        .selectBox select {
+            width: 100%;
+            font-weight: bold;
+        }
+        
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        
+        #checkboxes {
+            display: none;
+            border: 1px #dadada solid;
+        }
+        
+        #checkboxes label {
+            display: block;
+            font-size: 0.9em;
+        }
+        
+        #checkboxes label:hover {
+            background-color: #1e90ff;
+        }
+        
+        #subcategorias {
+            width: 400px;
+            margin: 80ppx auto;
+        }
+        
+        #subcategorias select {
+            width: 100%;
+        }
+    </style>
+
+    <form>
+        <div class="multiselect">
+            <div class="selectBox" onclick="showCheckboxes()">
+                <select>
+              <option>Seleccionar Catalogo</option>
+            </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkboxes">
+                <label for="catalogo1">
+                 <input type="checkbox" id="catalogo1" name="catalogo1" onclick="filtroCatalogo1('catalogo1','carroceria')">Carroceria</label>
+
+
+                <label for="catalogo2">
+                <input type="checkbox" id="catalogo2" name="catalogo2" value="Correa">Correa de accesorios y servicios</label>
+
+
+                <label for="catalogo3">
+                <input type="checkbox" id="catalogo3" name="catalogo3" value="Frenos">Frenos</label>
+
+                <label for="catalogo4">
+                <input type="checkbox" id="catalogo4" name="catalogo4" value="Motordepartida">Motores de partida y alternador</label>
+
+                <label for="catalogo5">
+                <input type="checkbox" id="catalogo5" name="catalogo5" value="Refrigeracion">Refrigeración y calefacción</label>
+
+                <label for="catalogo6">
+                <input type="checkbox" id="catalogo6" name="catalogo6" value="Rodamiento">Rodamiento y Retenes</label>
+
+                <label for="catalogo7">
+                <input type="checkbox" id="catalogo7" name="catalogo7" value="Sensores">Sensores y eléctrica</label>
+
+                <label for="catalogo8">
+                <input type="checkbox" id="catalogo8" name="catalogo8" value="Suspension">Suspensión y dirección</label>
+
+                <label for="catalogo9">
+                <input type="checkbox" id="catalogo9" name="catalogo9" value="Electrico">Eléctrico</label>
+
+            </div>
+        </div>
+
+        <p id="carroceria" style="display:none">Checkbox is CHECKED!</p>
+
+
+
+
+
+        <div id="subcategorias">
+            <select name="subc" id="subc" class="subcc" multiple="multiple">
+                <option selected value="0"> Elige una opción </option>
+
+                <optgroup class="carroceriasub" style="display:none" label="Carroceria">   
+                    <option value="1">Windows Vista</option> 
+                    <option value="2">Windows 7</option> 
+                    <option value="3">Windows XP</option> 
+               </optgroup> 
+
+            </select>
+        </div>
+
+    </form>
+
+    <form>
+        <div>
+
+            <label>Email:</label>
+            <input id="email" name="email" type="email">
+        </div>
+        <div>
+            <input id="submit" type="submit" name="Enviar" onclick="mostrarEmail()">
+        </div>
+
+    </form>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js">
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+
+</body>
+
+<script>
+    $(".carroceria").chosen({
+        no_results_text: "Oops, nothing found!"
+    })
+</script>
+
+
+</html>

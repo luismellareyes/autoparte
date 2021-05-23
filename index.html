@@ -10,11 +10,13 @@
     <link rel="shortcut icon" href="img/autoparte-fv-09.svg">
     <script src="https://kit.fontawesome.com/4bb686cdec.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="js/email.js"></script>
 
 </head>
 
 <body>
-    <div class="header">
+    <div class="header" style="background-image:url(/img/autoparte-back02-08.svg)">
 
 
         <div class="container">
@@ -25,7 +27,7 @@
                 <nav>
                     <ul>
                         <li><a href="">Inicio</a></li>
-                        <li><a href="">Cotizador</a></li>
+                        <li><a href="cotizador.html">Cotizador</a></li>
                         <li><a href="">Nosotros </a></li>
                         <li><a href="">Contacto</a></li>
                         <li><a href="">Cuenta</a></li>
@@ -50,6 +52,11 @@
             <div class="col-3">
                 <h3>catalogo</h3>
             </div>
+            <form method="post">
+                <input type="button" value="Send Email" onclick="sendEmail()" />
+
+            </form>
+
         </div>
     </div>
 
