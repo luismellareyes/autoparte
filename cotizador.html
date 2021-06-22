@@ -11,10 +11,62 @@
     <link rel="shortcut icon" href="img/autoparte-fv-09.svg">
     <script src="https://kit.fontawesome.com/4bb686cdec.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/filtro.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+
 </head>
 
 <body>
-
+    <style>
+        /* .filtroCatalogos {
+            width: 100%;
+            flex: 1;
+        } */
+        
+        .selectBox {
+            position: relative;
+            background-color: white;
+        }
+        
+        .selectBox select {
+            width: 100%;
+            font-weight: bold;
+            /* background-color: white; */
+        }
+        
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        
+        #checkboxes {
+            display: none;
+            border: 1px #dadada solid;
+            background-color: white;
+        }
+        
+        #checkboxes label {
+            display: block;
+            font-size: 0.9em;
+        }
+        
+        #checkboxes label:hover {
+            background-color: #1e90ff;
+        }
+        
+        #subcategorias {
+            width: 400px;
+            margin: 80ppx auto;
+        }
+        
+        #subcategorias select {
+            width: 100%;
+        }
+    </style>
     <div class="header" style="background-image:url(/img/autoparte-back02-08.svg)">
 
         <div class="nav"></div>
@@ -51,6 +103,694 @@
             </div>
 
 
+        </form>
+
+    </div>
+
+
+
+    <div class="catalogo">
+
+        <h2>Productos</h2>
+        <form class="filtroCatalogos">
+            <div class="col-3">
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes()">
+                        <select>
+                            <option>Seleccionar Catalogo</option>
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes">
+                        <label for="catalogo1"> <input type="checkbox" id="catalogo1" name="catalogo1"
+                                onclick="filtroCatalogo1('catalogo1','carroceriasub')">Carroceria</label>
+                        <label for="catalogo2"> <input type="checkbox" id="catalogo2" name="catalogo2"
+                                onclick="filtroCatalogo1('catalogo2','correassub')">Correas De Accesorios Y
+                            Servicios</label>
+                        <label for="catalogo3"> <input type="checkbox" id="catalogo3" name="catalogo3"
+                                onclick="filtroCatalogo1('catalogo3','frenossub')">Frenos</label>
+                        <label for="catalogo4"> <input type="checkbox" id="catalogo4" name="catalogo4"
+                                onclick="filtroCatalogo1('catalogo4','partidasub')">Motor De Partida Y
+                            Alternador</label>
+                        <label for="catalogo5"> <input type="checkbox" id="catalogo5" name="catalogo5"
+                                onclick="filtroCatalogo1('catalogo5','refrigeracionsub')">Refrigeracion Y
+                            Calefaccion</label>
+                        <label for="catalogo6"> <input type="checkbox" id="catalogo6" name="catalogo6"
+                                onclick="filtroCatalogo1('catalogo6','rodamientossub')">Rodamiento Y Retenes</label>
+                        <label for="catalogo7"> <input type="checkbox" id="catalogo7" name="catalogo7"
+                                onclick="filtroCatalogo1('catalogo7','sensoressub')">Sensores Y Electrica</label>
+                        <label for="catalogo8"> <input type="checkbox" id="catalogo8" name="catalogo8"
+                                onclick="filtroCatalogo1('catalogo8','suspensionsub')">Suspension Y Direccion</label>
+                        <label for="catalogo9"> <input type="checkbox" id="catalogo9" name="catalogo9"
+                                onclick="filtroCatalogo1('catalogo9','electricosub')">Electrico</label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div id="subcategorias">
+                    <select name="subc" id="subc" class="subcc" onchange="changeFunc()">
+                        <option selected value="0"> Elige una opción </option>
+
+                        <optgroup class="carroceriasub" style="display:none" label="Carroceria">
+                            <option value="amortiguadoresdeportalonssub">Amortiguadores de portalon</option>
+                            <option value="capotssub">Capot</option>
+                            <option value="costadosssub">Costados</option>
+                            <option value="espejoretrovisorinteriorssub">Espejo retrovisor interior</option>
+                            <option value="focosssub">Focos</option>
+                            <option value="gomasssub">Gomas</option>
+                            <option value="guardafangosssub">Guarda fangos</option>
+                            <option value="maletassub">Maleta</option>
+                            <option value="mascarassub">Mascara</option>
+                            <option value="mensulasssub">Mensulas</option>
+                            <option value="moldurasbiselssub">Molduras bisel</option>
+                            <option value="molduraspasaruedasssub">Molduras pasa ruedas</option>
+                            <option value="molduraspuertasssub">Molduras puertas</option>
+                            <option value="moldurasvidriosssub">Molduras vidrios</option>
+                            <option value="neblinerosssub">Neblineros</option>
+                            <option value="opticosssub">Ópticos</option>
+                            <option value="parachoquesssub">Parachoques</option>
+                            <option value="portalonssub">Portalón</option>
+                            <option value="puertasssub">Puertas</option>
+                            <option value="reflectoresssub">Reflectores</option>
+                            <option value="retrovisoresssub">Retrovisores</option>
+                            <option value="tapadebencinassub">Tapa de bencina</option>
+                            <option value="tapabarrossub">Tapabarro</option>
+                            <option value="vidriosssub">Vidrios</option>
+                        </optgroup>
+                        <optgroup class="correassub" style="display:none" label="Correas De Accesorios Y Servicios">
+                            <option value="correadeaireacondicionadossub">Correa de aire acondicionado</option>
+                            <option value="correadealternadorssub">Correa de alternador</option>
+                            <option value="correadebombadeaguassub">Correa de bomba de agua</option>
+                            <option value="correadedireccionasistidassub">Correa de dirección asistida</option>
+                            <option value="correadeventilacionssub">Correa de ventilación</option>
+                            <option value="rodamientodecorreasauxiliarssub">Rodamiento de correas auxiliar</option>
+                        </optgroup>
+                        <optgroup class="frenossub" style="display:none" label="Frenos">
+                            <option value="balatasdefrenosssub">Balatas de frenos</option>
+                            <option value="bombadefrenossub">Bomba de freno</option>
+                            <option value="chavetasssub">Chavetas</option>
+                            <option value="cilindrosdefrenosssub">Cilindros de frenos</option>
+                            <option value="discosdefrenosssub">Discos de frenos</option>
+                            <option value="flexiblesdefrenosssub">Flexibles de frenos</option>
+                            <option value="gomadecilindrotipoarossub">Goma de cilindro tipo aro</option>
+                            <option value="gomadecilindrotipotazassub">Goma de cilindro tipo taza</option>
+                            <option value="guardapolvosdecilindrodefrenossub">Guardapolvos de cilindro de freno</option>
+                            <option value="kitdefrenosdediscossub">Kit de frenos de disco</option>
+                            <option value="kitdelatasparapastillasssub">Kit de latas para pastillas</option>
+                            <option value="kitdereparacionbombadefrenossub">Kit de reparación bomba de freno</option>
+                            <option value="kitdereparacionparacaliperssub">Kit de reparación para caliper</option>
+                            <option value="kitderesortesdefrenossub">Kit de resortes de freno</option>
+                            <option value="pastillasdefrenossub">Pastillas de freno</option>
+                            <option value="sangradodefrenosssub">Sangrado de frenos</option>
+                            <option value="segurosdebalatasssub">Seguros de balatas</option>
+                            <option value="tamboresdefrenosssub">Tambores de frenos</option>
+                        </optgroup>
+                        <optgroup class="partidasub" style="display:none" label="Motor De Partida Y Alternador">
+                            <option value="alternadorssub">Alternador</option>
+                            <option value="bendixssub">Bendix</option>
+                            <option value="carbonesdealternadorssub">Carbones de alternador</option>
+                            <option value="carbonesdemotordepartidassub">Carbones de motor de partida</option>
+                            <option value="motordepartidassub">Motor de partida</option>
+                            <option value="placadediodosorectificadorassub">Placa de diodos o rectificadora</option>
+                            <option value="portacarbonesdealternadorssub">Porta carbones de alternador</option>
+                            <option value="portacarbonesmotordepartidassub">Porta carbones motor de partida</option>
+                            <option value="reguladordevoltajessub">Regulador de voltaje</option>
+                            <option value="rodamientodealternadorssub">Rodamiento de alternador</option>
+                            <option value="solenoidessub">Solenoide</option>
+                        </optgroup>
+                        <optgroup class="refrigeracionsub" style="display:none" label="Refrigeracion Y Calefaccion">
+                            <option value="abrazaderasssub">Abrazaderas</option>
+                            <option value="bombadeaguassub">Bomba de agua</option>
+                            <option value="cuerpocentrifugossub">Cuerpo centrifugo</option>
+                            <option value="depositoauxiliarderadiadorssub">Deposito auxiliar de radiador</option>
+                            <option value="electroventiladorssub">Electroventilador</option>
+                            <option value="mangueraderadiadorssub">Manguera de radiador</option>
+                            <option value="radiadordemotorssub">Radiador de motor</option>
+                            <option value="switchdeelectroventiladorssub">Switch de electroventilador</option>
+                            <option value="tapaderadiadorssub">Tapa de radiador</option>
+                            <option value="tapadetermostatossub">Tapa de termostato</option>
+                            <option value="termostatossub">Termostato</option>
+                            <option value="tubosdeaguassub">Tubos de agua</option>
+                            <option value="valvuladecalefaccionssub">Válvula de calefacción</option>
+                        </optgroup>
+                        <optgroup class="rodamientossub" style="display:none" label="Rodamiento Y Retenes">
+                            <option value="mazassub">Maza</option>
+                            <option value="retenderuedassub">Reten de rueda</option>
+                            <option value="rodamientoderuedassub">Rodamiento de rueda</option>
+                        </optgroup>
+                        <optgroup class="sensoressub" style="display:none" label="Sensores Y Electrica">
+                            <option value="bulbodepresiondeaceitessub">Bulbo de presión de aceite</option>
+                            <option value="bulbodetemperaturadelaguassub">Bulbo de temperatura del agua</option>
+                            <option value="relayssub">Relay</option>
+                            <option value="relayflasherssub">Relay flasher</option>
+                            <option value="sensordeangulo(captador)ssub">Sensor de angulo (captador)</option>
+                            <option value="sensordeoxigenossub">Sensor de oxigeno</option>
+                            <option value="sensordepocisiondecigüeñalssub">Sensor de pocisión de cigüeñal</option>
+                            <option value="sensormapssub">Sensor map</option>
+                            <option value="sensortemp.delaireadmisionssub">Sensor temp. Del aire admision</option>
+                            <option value="sensortpsssub">Sensor tps</option>
+                            <option value="sesordeposiciondelevassub">Sesor de posición de leva</option>
+                            <option value="switchdefrenosssub">Switch de frenos</option>
+                            <option value="switchdemarchaatrasssub">Switch de marcha atrás</option>
+                            <option value="switchdepuertassub">Switch de puerta</option>
+                            <option value="telecomandodelucesssub">Telecomando de luces</option>
+                            <option value="valvulaiacssub">Válvula iac</option>
+                        </optgroup>
+                        <optgroup class="suspensionsub" style="display:none" label="Suspension Y Direccion">
+                            <option value="amortiguadordedireccionssub">Amortiguador de dirección</option>
+                            <option value="amortiguadoresssub">Amortiguadores</option>
+                            <option value="articulaciondecremallerassub">Articulación de cremallera</option>
+                            <option value="bandejasdesuspencionssub">Bandejas de suspención</option>
+                            <option value="barracentralssub">Barra central</option>
+                            <option value="bieletadebarraestabilizadorassub">Bieleta de barra estabilizadora</option>
+                            <option value="brazoauxiliarssub">Brazo auxiliar</option>
+                            <option value="brazopitmanssub">Brazo pitman</option>
+                            <option value="bujedebrazoauxiliarssub">Buje de brazo auxiliar</option>
+                            <option value="bujedepaquetederesortesssub">Buje de paquete de resortes</option>
+                            <option value="bujeparabandejasesuspensionssub">Buje para bandeja se suspensión</option>
+                            <option value="bujeparabarraestabilizadorassub">Buje para barra estabilizadora</option>
+                            <option value="bujeparabarratensorassub">Buje para barra tensora</option>
+                            <option value="cazoletasssub">Cazoletas</option>
+                            <option value="columnadedireccionssub">Columna de dirección</option>
+                            <option value="cremalleradedireccionssub">Cremallera de dirección</option>
+                            <option value="fuellesdecremallerasssub">Fuelles de cremalleras</option>
+                            <option value="rotulassub">Rotula</option>
+                            <option value="terminalaxialy/ointeriorssub">Terminal axial y/o interior</option>
+                            <option value="terminaldedireccionssub">Terminal de dirección</option>
+                        </optgroup>
+                        <optgroup class="electricosub" style="display:none" label="Electrico">
+                            <option value="antenassub">Antena</option>
+                            <option value="bocinassub">Bocina</option>
+                        </optgroup>
+
+
+                    </select>
+                </div>
+
+            </div>
+            <div class="col-3">
+
+                <div id="subsubcategoria">
+
+                    <select name="ssubc" id="ssubc" class="ssubcc">
+                        <option selected value="0"> Elige una opción </option>
+
+
+                        <optgroup class="amortiguadoresdeportalonssub" style="display:none"
+                            label="Amortiguadores de portalon">
+                            <option value="1">Amortiguadores de portalon</option>
+                        </optgroup>
+                        <optgroup class="capotssub" style="display:none" label="Capot">
+                            <option value="2">Capot</option>
+                        </optgroup>
+                        <optgroup class="costadosssub" style="display:none" label="Costados">
+                            <option value="3">Costado trasero derecho</option>
+                            <option value="4">Costado trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="espejoretrovisorinteriorssub" style="display:none"
+                            label="Espejo retrovisor interior">
+                            <option value="5">Espejo retrovisor interior</option>
+                        </optgroup>
+                        <optgroup class="focosssub" style="display:none" label="Focos">
+                            <option value="6">Foco costado trasero derecho</option>
+                            <option value="7">Foco costado trasero izquierdo</option>
+                            <option value="8">Foco intermitente derecho</option>
+                            <option value="9">Foco intermitente izquierdo</option>
+                            <option value="10">Foco maleta trasero derecho</option>
+                            <option value="11">Foco maleta trasero izquierdo</option>
+                            <option value="12">Foco portalón trasero derecho</option>
+                            <option value="13">Foco portalón trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="gomasssub" style="display:none" label="Gomas">
+                            <option value="14">Goma contorno maleta o portalón</option>
+                            <option value="15">Goma contorno puerta delantero derecho</option>
+                            <option value="16">Goma contorno puerta delantero izquierdo</option>
+                            <option value="17">Goma contorno puerta trasero derecho</option>
+                            <option value="18">Goma contorno puerta trasero izquierdo</option>
+                            <option value="19">Goma parabrisas</option>
+                            <option value="20">Goma quarter trasero derecho</option>
+                            <option value="21">Goma quarter trasero izquierdo</option>
+                            <option value="22">Goma ventanilla delantero derecho</option>
+                            <option value="23">Goma ventanilla delantero izquierdo</option>
+                            <option value="24">Goma ventanilla trasero derecho</option>
+                            <option value="25">Goma ventanilla trasero izquierdo</option>
+                            <option value="26">Goma vidrio puerta delantero derecho</option>
+                            <option value="27">Goma vidrio puerta delantero izquierdo</option>
+                            <option value="28">Goma vidrio puerta trasero derecho</option>
+                            <option value="29">Goma vidrio puerta trasero izquierdo</option>
+                            <option value="30">Goma vidrio trasero</option>
+                        </optgroup>
+                        <optgroup class="guardafangosssub" style="display:none" label="Guarda fangos">
+                            <option value="31">Guarda fango delantero derecho</option>
+                            <option value="32">Guarda fango delantero izquierdo</option>
+                            <option value="33">Guarda fango trasero derecho</option>
+                            <option value="34">Guarda fango trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="maletassub" style="display:none" label="Maleta">
+                            <option value="35">Maleta trasera</option>
+                        </optgroup>
+                        <optgroup class="mascarassub" style="display:none" label="Mascara">
+                            <option value="36">Bisel mascara delantero</option>
+                            <option value="37">Mascara delantero</option>
+                        </optgroup>
+                        <optgroup class="mensulasssub" style="display:none" label="Mensulas">
+                            <option value="38">Mensula parachoques delantero derecho</option>
+                            <option value="39">Mensula parachoques delantero izquierdo</option>
+                            <option value="40">Mensula parachoques trasero derecho</option>
+                            <option value="41">Mensula parachoques trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="moldurasbiselssub" style="display:none" label="Molduras bisel">
+                            <option value="42">Moldura bisel neblinero delantero derecho</option>
+                            <option value="43">Moldura bisel neblinero delantero izquierdo</option>
+                            <option value="44">Moldura bisel neblinero trasero derecho</option>
+                            <option value="45">Moldura bisel neblinero trasero izquierdo</option>
+                            <option value="46">Moldura bisel parachoques</option>
+                            <option value="47">Moldura bisel parachoques delantero derecho</option>
+                            <option value="48">Moldura bisel parachoques delantero izquierdo</option>
+                            <option value="49">Moldura bisel parachoques trasero derecho</option>
+                            <option value="50">Moldura bisel parachoques trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="molduraspasaruedasssub" style="display:none" label="Molduras pasa ruedas">
+                            <option value="51">Moldura pasa rueda tapabarro delantero derecho</option>
+                            <option value="52">Moldura pasa rueda tapabarro delantero izquierdo</option>
+                            <option value="53">Moldura pasa rueda parachoques delantero derecho</option>
+                            <option value="54">Moldura pasa rueda parachoques delantero izquierdo</option>
+                            <option value="55">Moldura pasa rueda parachoques trasero derecho</option>
+                            <option value="56">Moldura pasa rueda parachoques trasero izquierdo</option>
+                            <option value="57">Moldura pasa rueda puerta delantero derecho</option>
+                            <option value="58">Moldura pasa rueda puerta delantero izquierdo</option>
+                            <option value="59">Moldura pasa rueda puerta trasero derecho</option>
+                            <option value="60">Moldura pasa rueda puerta trasero izquierdo</option>
+                            <option value="61">Moldura pasa rueda costado trasero derecho</option>
+                            <option value="62">Moldura pasa rueda costado trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="molduraspuertasssub" style="display:none" label="Molduras puertas">
+                            <option value="63">Moldura puerta delantero derecho</option>
+                            <option value="64">Moldura puerta delantero izquierdo</option>
+                            <option value="65">Moldura puerta trasero derecho</option>
+                            <option value="66">Moldura puerta trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="moldurasvidriosssub" style="display:none" label="Molduras vidrios">
+                            <option value="67">Moldura vidrio parabrisas</option>
+                            <option value="68">Moldura vidrio quarter trasero derecho</option>
+                            <option value="69">Moldura vidrio quarter trasero izquierdo</option>
+                            <option value="70">Moldura vidrio ventanilla delantero derecho</option>
+                            <option value="71">Moldura vidrio ventanilla delantero izquierdo</option>
+                            <option value="72">Moldura vidrio ventanilla trasero derecho</option>
+                            <option value="73">Moldura vidrio ventanilla trasero izquierdo</option>
+                            <option value="74">Moldura vidrio puerta delantero derecho</option>
+                            <option value="75">Moldura vidrio puerta delantero izquierdo</option>
+                            <option value="76">Moldura vidrio puerta trasero derecho</option>
+                            <option value="77">Moldura vidrio puerta trasero izquierdo</option>
+                            <option value="78">Moldura vidrio trasero</option>
+                        </optgroup>
+                        <optgroup class="neblinerosssub" style="display:none" label="Neblineros">
+                            <option value="79">Foco neblinero delantero derecho</option>
+                            <option value="80">Foco neblinero delantero izquierdo</option>
+                            <option value="81">Foco neblinero trasero derecho</option>
+                            <option value="82">Foco neblinero trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="opticosssub" style="display:none" label="Ópticos">
+                            <option value="83">Ópticos delantero derecho</option>
+                            <option value="84">Ópticos delantero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="parachoquesssub" style="display:none" label="Parachoques">
+                            <option value="85">Parachoques delantero</option>
+                            <option value="86">Parachoques trasero</option>
+                        </optgroup>
+                        <optgroup class="portalonssub" style="display:none" label="Portalón">
+                            <option value="87">Portalón</option>
+                        </optgroup>
+                        <optgroup class="puertasssub" style="display:none" label="Puertas">
+                            <option value="88">Puerta delantero derecho</option>
+                            <option value="89">Puerta delantero izquierdo</option>
+                            <option value="90">Puerta trasero derecho</option>
+                            <option value="91">Puerta trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="reflectoresssub" style="display:none" label="Reflectores">
+                            <option value="92">Reflector parachoques delantero derecho</option>
+                            <option value="93">Reflector parachoques delantero izquierdo</option>
+                            <option value="94">Reflector parachoques trasero derecho</option>
+                            <option value="95">Reflector parachoques trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="retrovisoresssub" style="display:none" label="Retrovisores">
+                            <option value="96">Base retrovisor derecho</option>
+                            <option value="97">Base retrovisor izquierdo</option>
+                            <option value="98">Carcasa retrovisor derecho</option>
+                            <option value="99">Carcasa retrovisor izquierdo</option>
+                            <option value="100">Luneta espejo retrovisor derecho</option>
+                            <option value="101">Luneta espejo retrovisor izquierdo</option>
+                            <option value="102">Motor retrovisor derecho</option>
+                            <option value="103">Motor retrovisor izquierdo</option>
+                            <option value="104">Retrovisores derecho</option>
+                            <option value="105">Retrovisores izquierdo</option>
+                        </optgroup>
+                        <optgroup class="tapadebencinassub" style="display:none" label="Tapa de bencina">
+                            <option value="106">Tapa de bencina</option>
+                        </optgroup>
+                        <optgroup class="tapabarrossub" style="display:none" label="Tapabarro">
+                            <option value="107">Tapabarro delantero derecho</option>
+                            <option value="108">Tapabarro delantero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="vidriosssub" style="display:none" label="Vidrios">
+                            <option value="109">Vidrio parabrisas</option>
+                            <option value="110">Vidrio quarter trasero derecho</option>
+                            <option value="111">Vidrio quarter trasero izquierdo</option>
+                            <option value="112">Vidrio ventanilla delantero derecho</option>
+                            <option value="113">Vidrio ventanilla delantero izquierdo</option>
+                            <option value="114">Vidrio ventanilla trasero derecho</option>
+                            <option value="115">Vidrio ventanilla trasero izquierdo</option>
+                            <option value="116">Vidrio puerta delantero derecho</option>
+                            <option value="117">Vidrio puerta delantero izquierdo</option>
+                            <option value="118">Vidrio puerta trasero derecho</option>
+                            <option value="118">Vidrio puerta trasero derecho</option>
+                            <option value="120">Vidrio trasero</option>
+
+                        </optgroup>
+                        <optgroup class="correadeaireacondicionadossub" style="display:none"
+                            label="Correa de aire acondicionado">
+                            <option value="121">Correa de aire acondicionado</option>
+                        </optgroup>
+                        <optgroup class="correadealternadorssub" style="display:none" label="Correa de alternador">
+                            <option value="122">Correa de alternador</option>
+                        </optgroup>
+                        <optgroup class="correadebombadeaguassub" style="display:none" label="Correa de bomba de agua">
+                            <option value="123">Correa de bomba de agua</option>
+                        </optgroup>
+                        <optgroup class="correadedireccionasistidassub" style="display:none"
+                            label="Correa de dirección asistida">
+                            <option value="124">Correa de dirección asistida</option>
+                        </optgroup>
+                        <optgroup class="correadeventilacionssub" style="display:none" label="Correa de ventilación">
+                            <option value="125">Correa de ventilación</option>
+                        </optgroup>
+                        <optgroup class="rodamientodecorreasauxiliarssub" style="display:none"
+                            label="Rodamiento de correas auxiliar">
+                            <option value="126">Rodamiento de correas auxiliar</option>
+
+                        </optgroup>
+                        <optgroup class="balatasdefrenosssub" style="display:none" label="Balatas de frenos">
+                            <option value="127">Balatas de freno delanteros</option>
+                            <option value="128">Balatas de freno traseros</option>
+                        </optgroup>
+                        <optgroup class="bombadefrenossub" style="display:none" label="Bomba de freno">
+                            <option value="129">Bomba de freno</option>
+                        </optgroup>
+                        <optgroup class="chavetasssub" style="display:none" label="Chavetas">
+                            <option value="130">Chavetas</option>
+                        </optgroup>
+                        <optgroup class="cilindrosdefrenosssub" style="display:none" label="Cilindros de frenos">
+                            <option value="131">Cilindros de frenos</option>
+                        </optgroup>
+                        <optgroup class="discosdefrenosssub" style="display:none" label="Discos de frenos">
+                            <option value="132">Disco de freno delantero</option>
+                            <option value="133">Disco de frenos trasero</option>
+                        </optgroup>
+                        <optgroup class="flexiblesdefrenosssub" style="display:none" label="Flexibles de frenos">
+                            <option value="134">Flexibles de freno</option>
+                        </optgroup>
+                        <optgroup class="gomadecilindrotipoarossub" style="display:none"
+                            label="Goma de cilindro tipo aro">
+                            <option value="135">Goma de cilindro tipo aro</option>
+                        </optgroup>
+                        <optgroup class="gomadecilindrotipotazassub" style="display:none"
+                            label="Goma de cilindro tipo taza">
+                            <option value="136">Goma de cilindro tipo taza</option>
+                        </optgroup>
+                        <optgroup class="guardapolvosdecilindrodefrenossub" style="display:none"
+                            label="Guardapolvos de cilindro de freno">
+                            <option value="137">Guardapolvos de cilindro de freno</option>
+                        </optgroup>
+                        <optgroup class="kitdefrenosdediscossub" style="display:none" label="Kit de frenos de disco">
+                            <option value="138">Kit de frenos de disco delantero</option>
+                            <option value="139">Kit de frenos de disco trasero</option>
+                        </optgroup>
+                        <optgroup class="kitdelatasparapastillasssub" style="display:none"
+                            label="Kit de latas para pastillas">
+                            <option value="140">Kit de latas para pastillas</option>
+                        </optgroup>
+                        <optgroup class="kitdereparacionbombadefrenossub" style="display:none"
+                            label="Kit de reparación bomba de freno">
+                            <option value="141">Kit de reparación bomba de freno</option>
+                        </optgroup>
+                        <optgroup class="kitdereparacionparacaliperssub" style="display:none"
+                            label="Kit de reparación para caliper">
+                            <option value="142">Kit de reparación para caliper</option>
+                        </optgroup>
+                        <optgroup class="kitderesortesdefrenossub" style="display:none"
+                            label="Kit de resortes de freno">
+                            <option value="143">Kit de resortes de freno</option>
+                        </optgroup>
+                        <optgroup class="pastillasdefrenossub" style="display:none" label="Pastillas de freno">
+                            <option value="144">Partillas de freno delantero</option>
+                            <option value="145">Pastillas de freno trasero</option>
+                        </optgroup>
+                        <optgroup class="sangradodefrenosssub" style="display:none" label="Sangrado de frenos">
+                            <option value="146">Sangrado de freno</option>
+                        </optgroup>
+                        <optgroup class="segurosdebalatasssub" style="display:none" label="Seguros de balatas">
+                            <option value="147">Seguros de balatas</option>
+                        </optgroup>
+                        <optgroup class="tamboresdefrenosssub" style="display:none" label="Tambores de frenos">
+                            <option value="148">Tambores de freno trasero</option>
+
+                        </optgroup>
+                        <optgroup class="alternadorssub" style="display:none" label="Alternador">
+                            <option value="149">Alternador</option>
+                        </optgroup>
+                        <optgroup class="bendixssub" style="display:none" label="Bendix">
+                            <option value="150">Bendix</option>
+                        </optgroup>
+                        <optgroup class="carbonesdealternadorssub" style="display:none" label="Carbones de alternador">
+                            <option value="151">Carbones de alternador</option>
+                        </optgroup>
+                        <optgroup class="carbonesdemotordepartidassub" style="display:none"
+                            label="Carbones de motor de partida">
+                            <option value="152">Carbones de motor de partida</option>
+                        </optgroup>
+                        <optgroup class="motordepartidassub" style="display:none" label="Motor de partida">
+                            <option value="153">Motor de partida</option>
+                        </optgroup>
+                        <optgroup class="placadediodosorectificadorassub" style="display:none"
+                            label="Placa de diodos o rectificadora">
+                            <option value="154">Placa de diodos o rectificadora</option>
+                        </optgroup>
+                        <optgroup class="portacarbonesdealternadorssub" style="display:none"
+                            label="Porta carbones de alternador">
+                            <option value="155">Porta carbones de alternador</option>
+                        </optgroup>
+                        <optgroup class="portacarbonesmotordepartidassub" style="display:none"
+                            label="Porta carbones motor de partida">
+                            <option value="156">Porta carbones motor de partida</option>
+                        </optgroup>
+                        <optgroup class="reguladordevoltajessub" style="display:none" label="Regulador de voltaje">
+                            <option value="157">Regulador de voltaje</option>
+                        </optgroup>
+                        <optgroup class="rodamientodealternadorssub" style="display:none"
+                            label="Rodamiento de alternador">
+                            <option value="158">Rodamiento de alternador</option>
+                        </optgroup>
+                        <optgroup class="solenoidessub" style="display:none" label="Solenoide">
+                            <option value="159">Solenoide</option>
+
+                        </optgroup>
+                        <optgroup class="abrazaderasssub" style="display:none" label="Abrazaderas">
+                            <option value="160">Abrazaderas</option>
+                        </optgroup>
+                        <optgroup class="bombadeaguassub" style="display:none" label="Bomba de agua">
+                            <option value="161">Bomba de agua</option>
+                        </optgroup>
+                        <optgroup class="cuerpocentrifugossub" style="display:none" label="Cuerpo centrifugo">
+                            <option value="162">Cuerpo centrifugo</option>
+                        </optgroup>
+                        <optgroup class="depositoauxiliarderadiadorssub" style="display:none"
+                            label="Deposito auxiliar de radiador">
+                            <option value="163">Deposito auxiliar de radiador</option>
+                        </optgroup>
+                        <optgroup class="electroventiladorssub" style="display:none" label="Electroventilador">
+                            <option value="164">Electroventilador</option>
+                        </optgroup>
+                        <optgroup class="mangueraderadiadorssub" style="display:none" label="Manguera de radiador">
+                            <option value="165">Manguera de radiador</option>
+                        </optgroup>
+                        <optgroup class="radiadordemotorssub" style="display:none" label="Radiador de motor">
+                            <option value="166">Radiador de motor</option>
+                        </optgroup>
+                        <optgroup class="switchdeelectroventiladorssub" style="display:none"
+                            label="Switch de electroventilador">
+                            <option value="167">Switch de electroventilador</option>
+                        </optgroup>
+                        <optgroup class="tapaderadiadorssub" style="display:none" label="Tapa de radiador">
+                            <option value="168">Tapa de radiador</option>
+                        </optgroup>
+                        <optgroup class="tapadetermostatossub" style="display:none" label="Tapa de termostato">
+                            <option value="169">Tapa de termostato</option>
+                        </optgroup>
+                        <optgroup class="termostatossub" style="display:none" label="Termostato">
+                            <option value="170">Termostato</option>
+                        </optgroup>
+                        <optgroup class="tubosdeaguassub" style="display:none" label="Tubos de agua">
+                            <option value="171">Tubo de agua</option>
+                        </optgroup>
+                        <optgroup class="valvuladecalefaccionssub" style="display:none" label="Válvula de calefacción">
+                            <option value="172">Válvula de calefacción</option>
+
+                        </optgroup>
+                        <optgroup class="mazassub" style="display:none" label="Maza">
+                            <option value="173">Maza delantera</option>
+                            <option value="174">Maza trasera</option>
+                        </optgroup>
+                        <optgroup class="retenderuedassub" style="display:none" label="Reten de rueda">
+                            <option value="175">Reten de rueda delantero</option>
+                            <option value="176">Reten de rueda trasera</option>
+                        </optgroup>
+                        <optgroup class="rodamientoderuedassub" style="display:none" label="Rodamiento de rueda">
+                            <option value="177">Rodamiento de rueda delantera </option>
+                            <option value="178">Rodamiento de rueda trasera</option>
+
+                        </optgroup>
+                        <optgroup class="bulbodepresiondeaceitessub" style="display:none"
+                            label="Bulbo de presión de aceite">
+                            <option value="179">Bulbo de presión de aceite</option>
+                        </optgroup>
+                        <optgroup class="bulbodetemperaturadelaguassub" style="display:none"
+                            label="Bulbo de temperatura del agua">
+                            <option value="180">Bulbo de temperatura del agua</option>
+                        </optgroup>
+                        <optgroup class="relayssub" style="display:none" label="Relay">
+                            <option value="181">Relay</option>
+                        </optgroup>
+                        <optgroup class="relayflasherssub" style="display:none" label="Relay flasher">
+                            <option value="182">Relay flasher</option>
+                        </optgroup>
+                        <optgroup class="sensordeangulo(captador)ssub" style="display:none"
+                            label="Sensor de angulo (captador)">
+                            <option value="183">Sensor de angulo (captador)</option>
+                        </optgroup>
+                        <optgroup class="sensordeoxigenossub" style="display:none" label="Sensor de oxigeno">
+                            <option value="184">Sensor de oxigeno</option>
+                        </optgroup>
+                        <optgroup class="sensordepocisiondecigüeñalssub" style="display:none"
+                            label="Sensor de pocisión de cigüeñal">
+                            <option value="185">Sensor de pocisión de cigüeñal</option>
+                        </optgroup>
+                        <optgroup class="sensormapssub" style="display:none" label="Sensor map">
+                            <option value="186">Sensor map</option>
+                        </optgroup>
+                        <optgroup class="sensortemp.delaireadmisionssub" style="display:none"
+                            label="Sensor temp. Del aire admision">
+                            <option value="187">Sensor temp. Del aire admision</option>
+                        </optgroup>
+                        <optgroup class="sensortpsssub" style="display:none" label="Sensor tps">
+                            <option value="188">Sensor tps</option>
+                        </optgroup>
+                        <optgroup class="sesordeposiciondelevassub" style="display:none"
+                            label="Sesor de posición de leva">
+                            <option value="189">Sesor de posición de leva</option>
+                        </optgroup>
+                        <optgroup class="switchdefrenosssub" style="display:none" label="Switch de frenos">
+                            <option value="190">Switch de frenos</option>
+                        </optgroup>
+                        <optgroup class="switchdemarchaatrasssub" style="display:none" label="Switch de marcha atrás">
+                            <option value="191">Switch de marcha atrás</option>
+                        </optgroup>
+                        <optgroup class="switchdepuertassub" style="display:none" label="Switch de puerta">
+                            <option value="192">Switch de puerta</option>
+                        </optgroup>
+                        <optgroup class="telecomandodelucesssub" style="display:none" label="Telecomando de luces">
+                            <option value="193">Telecomando de luces</option>
+                        </optgroup>
+                        <optgroup class="valvulaiacssub" style="display:none" label="Válvula iac">
+                            <option value="194">Válvula iac</option>
+
+                        </optgroup>
+                        <optgroup class="amortiguadordedireccionssub" style="display:none"
+                            label="Amortiguador de dirección">
+                            <option value="195">Amortiguador de dirección</option>
+                        </optgroup>
+                        <optgroup class="amortiguadoresssub" style="display:none" label="Amortiguadores">
+                            <option value="196">Amortiguador delantero derecho</option>
+                            <option value="197">Amortiguador delantero izquierdo</option>
+                            <option value="198">Amortiguador trasero derecho</option>
+                            <option value="199">Amortiguador trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="articulaciondecremallerassub" style="display:none"
+                            label="Articulación de cremallera">
+                            <option value="200">Articulación de cremallera</option>
+                        </optgroup>
+                        <optgroup class="bandejasdesuspencionssub" style="display:none" label="Bandejas de suspención">
+                            <option value="201">Bandejas de suspención delantero derecho</option>
+                            <option value="202">Bandejas de suspención delantero izquierdo</option>
+                            <option value="203">Bandejas de suspención trasero derecho</option>
+                            <option value="204">Bandejas de suspención trasero izquierdo</option>
+                        </optgroup>
+                        <optgroup class="barracentralssub" style="display:none" label="Barra central">
+                            <option value="205">Barra central</option>
+                        </optgroup>
+                        <optgroup class="bieletadebarraestabilizadorassub" style="display:none"
+                            label="Bieleta de barra estabilizadora">
+                            <option value="206">Bieleta de barra estabilizadora</option>
+                        </optgroup>
+                        <optgroup class="brazoauxiliarssub" style="display:none" label="Brazo auxiliar">
+                            <option value="207">Brazo auxiliar</option>
+                        </optgroup>
+                        <optgroup class="brazopitmanssub" style="display:none" label="Brazo pitman">
+                            <option value="208">Brazo pitman</option>
+                        </optgroup>
+                        <optgroup class="bujedebrazoauxiliarssub" style="display:none" label="Buje de brazo auxiliar">
+                            <option value="209">Buje de brazo auxiliar</option>
+                        </optgroup>
+                        <optgroup class="bujedepaquetederesortesssub" style="display:none"
+                            label="Buje de paquete de resortes">
+                            <option value="210">Buje de paquete de resortes</option>
+                        </optgroup>
+                        <optgroup class="bujeparabandejasesuspensionssub" style="display:none"
+                            label="Buje para bandeja se suspensión">
+                            <option value="211">Buje para bandeja se suspensión</option>
+                        </optgroup>
+                        <optgroup class="bujeparabarraestabilizadorassub" style="display:none"
+                            label="Buje para barra estabilizadora">
+                            <option value="212">Buje para barra estabilizadora</option>
+                        </optgroup>
+                        <optgroup class="bujeparabarratensorassub" style="display:none" label="Buje para barra tensora">
+                            <option value="213">Buje para barra tensora</option>
+                        </optgroup>
+                        <optgroup class="cazoletasssub" style="display:none" label="Cazoletas">
+                            <option value="214">Cazoletas</option>
+                        </optgroup>
+                        <optgroup class="columnadedireccionssub" style="display:none" label="Columna de dirección">
+                            <option value="215">Columna de dirección</option>
+                        </optgroup>
+                        <optgroup class="cremalleradedireccionssub" style="display:none"
+                            label="Cremallera de dirección">
+                            <option value="216">Cremallera de dirección</option>
+                        </optgroup>
+                        <optgroup class="fuellesdecremallerasssub" style="display:none" label="Fuelles de cremalleras">
+                            <option value="217">Fuelles de cremalleras</option>
+                        </optgroup>
+                        <optgroup class="rotulassub" style="display:none" label="Rotula">
+                            <option value="218">Rotula</option>
+                        </optgroup>
+                        <optgroup class="terminalaxialy/ointeriorssub" style="display:none"
+                            label="Terminal axial y/o interior">
+                            <option value="219">Terminal axial y/o interior derecho</option>
+                            <option value="220">Terminal axial y/o interior izquierdo</option>
+                        </optgroup>
+                        <optgroup class="terminaldedireccionssub" style="display:none" label="Terminal de dirección">
+                            <option value="221">Terminal de dirección</option>
+                        </optgroup>
+                        <optgroup class="antenassub" style="display:none" label="Antena">
+                            <option value="222">Antena</option>
+                        </optgroup>
+                        <optgroup class="bocinassub" style="display:none" label="Bocina">
+                            <option value="223">Bocina</option>
+                        </optgroup>
+                    </select>
+
+                </div>
+            </div>
         </form>
 
     </div>
